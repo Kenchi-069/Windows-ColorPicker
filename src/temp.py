@@ -57,5 +57,7 @@ def pick_color_on_click():
             break
         ctypes.windll.kernel32.Sleep(50)  # prevent CPU hogging
 
-if __name__ == "__main__":
-    pick_color_on_click()
+keyboard.add_hotkey('ctrl+shift+k', pick_color_on_click)
+
+# Keep script running in background
+keyboard.wait()  # waits forever until the program is terminated
